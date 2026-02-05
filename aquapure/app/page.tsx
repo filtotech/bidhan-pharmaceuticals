@@ -11,7 +11,7 @@ const productData = {
   ]
 };
 // Next.js will automatically identify this for SEO
-import { Metadata } from "next";
+// import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "AquaPure | Premium Mineralized & Electrolyte Enhanced Water",

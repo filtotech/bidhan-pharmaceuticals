@@ -8,7 +8,8 @@ import { ArrowLeft, ShoppingCart, Check, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+// import { useToast } from "@/hooks/use-toast";
+import { Metadata } from "next";
 
 const productData = {
   "aquapure-classic": {
@@ -33,12 +34,15 @@ const productData = {
     features: ["Calming Magnesium", "Smooth Taste", "PH Balanced", "Deep Focus Support"]
   }
 };
+export const metadata : Metadata = {
+  title: 'AquaPure - Fortified Mineral Water for Optimal Hydration',
+};
 
 export default function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
   // Unwrapping params using 'use' hook for Next.js 15 compatibility
   const { id } = use(params);
   const product = productData[id as keyof typeof productData];
-  const { toast } = useToast();
+  // const { toast } = useToast();
   const [adding, setAdding] = useState(false);
 
   if (!product) return (
@@ -56,10 +60,10 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
     setAdding(true);
     setTimeout(() => {
       setAdding(false);
-      toast({
-        title: "Added to cart",
-        description: `${product.name} has been added to your bag.`,
-      });
+      // toast({
+      //   title: "Added to cart",
+      //   description: `${product.name} has been added to your bag.`,
+      // });
     }, 800);
   };
 
