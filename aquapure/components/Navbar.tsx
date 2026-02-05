@@ -31,7 +31,7 @@ export default function Header() {
                 <div className="flex h-20 items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <Image src={'/bidhanlogo.png'} width={80} height={80} alt="Bidhan Pharmaceuticals Logo" className="transition-transform group-hover:scale-105" />
+                        <Image src={'/bidhanlogo.png'} width={80} height={80} alt="Bidhan Pharmaceuticals Logo" className="transition-transform group-hover:scale-105 rounded-2xl" />
                         <div className="leading-tight">
                             <p className="text-lg font-bold text-slate-900">Bidhan Pharmaceuticals</p>
                             <p className="text-[10px] uppercase tracking-[0.2em] text-blue-600 font-bold">Science • Care • Trust</p>

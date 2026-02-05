@@ -1,65 +1,86 @@
 import Image from "next/image";
+import Hero from "@/components/Hero";
+import { Metadata } from "next";
+const productData = {
+  name: "Baby - LM",
+  category: "Anti-allergic / Anti-asthmatic",
+  genericName: "Montelukast + Levocetirizine Dihydrochloride",
+  description: "A premium syrup formulated for the effective relief of skin irritation, itching, and minor inflammatory conditions. Manufactured under strict WHO-GMP guidelines.",
+  images: [
+    "/Gemini_Generated_Image_3b56le3b56le3b56.png",
+  ]
+};
+// Next.js will automatically identify this for SEO
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "AquaPure | Premium Mineralized & Electrolyte Enhanced Water",
+  description: "Discover AquaPure's premium bottled water collection: Classic Mineralized for daily vitality, Sport with electrolytes, and Zen infused with magnesium for focus.",
+  
+  // MAX SEO KEYWORDS SECTION
+  keywords: [
+    // Brand Keywords
+    "AquaPure water",
+    "AquaPure Classic",
+    "AquaPure Sport electrolytes",
+    "AquaPure Zen magnesium water",
+    
+    // Category Keywords
+    "premium mineralized water",
+    "electrolyte enhanced bottled water",
+    "magnesium infused water for focus",
+    "best bottled water for athletes",
+    "alkaline mineral water brands",
+    
+    // Intent-Based & Long-Tail
+    "buy mineral water online",
+    "water for physical performance",
+    "natural hydration for daily vitality",
+    "calming magnesium drinks",
+    "healthy bottled water delivery",
+    "AquaPure price and benefits"
+  ],
+
+  openGraph: {
+    title: "AquaPure - Hydration Reimagined",
+    description: "From daily vitality to peak performance and calming focus, find the perfect AquaPure blend for your lifestyle.",
+    url: 'https://yourdomain.com', // Replace with your actual URL
+    siteName: 'AquaPure Hydration',
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1548919973-5dea5846f680?auto=format&fit=crop&q=80&w=800",
+        width: 800,
+        height: 600,
+        alt: "AquaPure Classic Mineralized Water",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "AquaPure | Pure Hydration for Every Goal",
+    description: "Daily vitality, sport performance, and zen focus. Explore the AquaPure collection.",
+    images: ["https://images.unsplash.com/photo-1548919973-5dea5846f680?auto=format&fit=crop&q=80&w=800"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <Hero />
+    
   );
 }
